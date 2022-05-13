@@ -15,9 +15,8 @@ type UserController struct {
 	users []models.User
 }
 
-// Contructor
-func (user *UserController) Init() {
-	user.users = []models.User{}
+func NewUserController() UserController {
+	return UserController{users: []models.User{}}
 }
 
 func (u *UserController) CreateAccount(res http.ResponseWriter, req *http.Request) {

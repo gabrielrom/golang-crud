@@ -9,8 +9,7 @@ const HttpAddr = ":3333"
 
 func Start() http.Handler {
 	//Controllers
-	userController := controllers.UserController{}
-	userController.Init()
+	userController := controllers.NewUserController()
 
 	apiMux := http.NewServeMux()
 	apiMux.Handle("/users", http.HandlerFunc(userController.CreateAccount))
